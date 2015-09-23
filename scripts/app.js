@@ -111,5 +111,21 @@ angular.module('app', ['ngMessages'])
 
     };
     
+    $scope.doReset = function(){
+        var f = $scope.f;
+        var c = $scope.c;
+        var e = $scope.e;
+        for (p in f){
+            f.hasOwnProperty(p) && (f[p] = null);
+        }
+        for (p in c){
+            c.hasOwnProperty(p) && (c[p] = null);
+        }
+        for (p in e){
+            e.hasOwnProperty(p) && (e[p] = null);
+        }
+        $scope.m.length = 0;
+    };
+    
 });
 
