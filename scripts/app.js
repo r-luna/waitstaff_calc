@@ -66,8 +66,8 @@ angular.module('app', ['ngMessages'])
         var tx = parseInt(tax) / 100 || 0;
         var tp = parseInt(tip) / 100 || 0;
         return {
-            subtotal: p + (p * tx),
-            tipamount:p * tp
+            subtotal:   p + (p * tx),
+            tipamount: (p + (p * tx)) * tp
         };
     }
     
