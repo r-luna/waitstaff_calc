@@ -1,0 +1,68 @@
+<div id="contentWrapper">
+   <div class="box">
+        <div class="header">
+            Enter the Meal Details
+        </div>
+        <div id="form">
+            <form name="myForm" ng-submit="validateForm()" novalidate>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td width="150">Base Meal Price:</td>
+                        <td>
+                             &nbsp;$ <input type="text" name="baseMealPrice" integer required ng-model="f.baseMealPrice" ng-pattern="/^\d+.\d{2}$/" ng-keyup="doCharges()" />
+                            <div ng-if="myForm.$submitted && !myForm.$pristine" ng-messages="myForm.baseMealPrice.$error">
+                                <div class="errMsg" ng-message="required">This field is required.</div>
+                                <div class="errMsg" ng-message="pattern">Must be a dollar amount, <br>ie <strong>123.00</strong> or <strong>25.10</strong></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tax rate:</td>
+                        <td>
+                            % <input type="text" name="taxRate" integer required ng-model="f.taxRate" ng-keyup="doCharges()" />
+                            <div ng-if="myForm.$submitted && !myForm.$pristine" ng-messages="myForm.taxRate.$error">
+                                <div class="errMsg" ng-message="required">This field is required.</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tip Percentage:</td>
+                        <td>
+                            % <input type="text" name="tipPercentage" integer required ng-model="f.tipPercentage" ng-keyup="doCharges()" />
+                            <div ng-if="myForm.$submitted && !myForm.$pristine" ng-messages="myForm.tipPercentage.$error">
+                                <div class="errMsg" ng-message="required">This field is required.</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div id="buttonWrapper">
+                    <input type="submit" value="submit" ng-click="submitForm()" />
+                    <input type="button" value="Cancel" ng-click="resetForm()" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="box">
+        <div class="header">
+            Customer Charges
+        </div>
+        <div id="chargesContent">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td width="150">Subtotal:</td>
+                    <td>{{ c.subtotal | currency}}</td>
+                </tr>
+                <tr>
+                    <td>Tip:</td>
+                    <td>{{ c.tip | currency}}</td>
+                </tr>
+                <tr>
+                    <td>Total:</td>
+                    <td>{{ c.total | currency}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>

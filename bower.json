@@ -1,0 +1,28 @@
+{
+  "name": "waitstaff_app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/r-luna/waitstaff_calc",
+  "authors": [
+    "Rick Luna <rluna@neonix.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-messages": "~1.4.7",
+    "angular-animate": "~1.4.7"
+  }
+}

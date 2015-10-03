@@ -1,0 +1,26 @@
+<div id="contentWrapper">
+    <div class="box">
+        <div class="header">
+            My Earnings Info
+        </div>
+        <div id="earningsContent">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td width="150">Tip Total:</td>
+                    <td>{{ e.tipTotal | currency }}</td>
+                </tr>
+                <tr>
+                    <td>Meal Count:</td>
+                    <td>{{ e.mealCount }}</td>
+                </tr>
+                <tr>
+                    <td>Average Tip Per Meal:</td>
+                    <td>{{ e.avgTip | currency }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="resetbtn">
+        <input type="button" value="Reset" ng-click="doReset()" />
+    </div>
+</div>

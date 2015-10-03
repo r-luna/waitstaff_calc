@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>waitstaff</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <script type="text/javascript" src="scripts/angular.js"></script>
+        <script type="text/javascript" src="scripts/angular-route.js"></script>
+        <script type="text/javascript" src="scripts/angular-messages.js"></script>
+        <script type="text/javascript" src="scripts/angular-animate.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/app.controller-home.js"></script>
+        <script type="text/javascript" src="scripts/app.controller-meal.js"></script>
+        <script type="text/javascript" src="scripts/app.controller-earnings.js"></script>
+    </head>
+<body ng-cloak>
+    <header>
+        <h1>Waitstaff Calculator</h1>
+        <p style="text-align:center"><a href="#/">Home</a> | <a href="#/new_meal/">New Meal</a> | <a href="#/earnings/">My Earnings</a></p>
+    </header>
+    <section ng-view></section>
+</body>
+</html>
