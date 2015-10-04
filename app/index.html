@@ -12,11 +12,13 @@
         <script type="text/javascript" src="scripts/app.controller-meal.js"></script>
         <script type="text/javascript" src="scripts/app.controller-earnings.js"></script>
     </head>
-<body ng-cloak>
+<body  ng-class="{loading: isLoading}" ng-cloak>
     <header>
         <h1>Waitstaff Calculator</h1>
         <p style="text-align:center"><a href="#/">Home</a> | <a href="#/new_meal/">New Meal</a> | <a href="#/earnings/">My Earnings</a></p>
     </header>
-    <section ng-view></section>
+    <div class="animate-view-container">
+        <section class="animate-view" ng-view></section>
+    </div>
 </body>
 </html>

@@ -17,8 +17,23 @@ var app = angular.module('app', ['ngRoute','ngMessages','ngAnimate'])
             mealCount: null,
             avgTip: null
         }
-    })
-    .config(['$routeProvider', function($routeProvider){
+    });
+    
+app.run(function($rootScope, $location, $timeout) {
+    $rootScope.$on('$routeChangeError', function() {
+        $location.path("/error");
+    });
+    $rootScope.$on('$routeChangeStart', function() {
+        //$rootScope.isLoading = true;
+    });
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $timeout(function() {
+        $rootScope.isLoading = false;
+      }, 50000);
+    });
+});
+
+app.config(['$routeProvider', function($routeProvider){
         $routeProvider.when('/', {
             templateUrl : 'templates/home.html',
             controller : 'HomeController as home'
